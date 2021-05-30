@@ -5,9 +5,11 @@ from time import sleep
 from selenium.common.exceptions import NoSuchElementException
 import os
 
-injectjs = """
+url_prefix = os.environ.get("INJECTOR_URL_PREFIX", "https://127.0.0.1")
+
+injectjs = f"""
 var script = document.createElement('script')
-script.src = 'https://127.0.0.1:9000/injector.js'
+script.src = '{url_prefix}/injector.js'
 document.getElementsByTagName('head')[0].appendChild(script)
 """
 
