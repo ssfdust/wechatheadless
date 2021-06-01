@@ -37,6 +37,12 @@ while True:
     except NoSuchElementException:
         print("not login")
         sleep(2)
-driver.execute_script(injectjs)
-sleep(2)
-driver.execute_script("injector.run()")
+
+def load(webdriver):
+    webdriver.execute_script(injectjs)
+    sleep(2)
+    webdriver.execute_script("injector.run()")
+
+while True:
+    driver
+    sleep(3600)
