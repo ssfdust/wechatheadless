@@ -19,9 +19,6 @@ options.headless = True
 # profile_path = Path(__file__).parent / "ffprofile"
 geckodriver_path = str(Path(__file__).parent / "bin/geckodriver")
 
-# profile = FirefoxProfile(profile_path)
-
-# driver = webdriver.Firefox(options=options, firefox_profile=profile_path, executable_path=geckodriver_path)
 driver = webdriver.Firefox(options=options, executable_path=geckodriver_path)
 driver.get("https://wx.qq.com")
 sleep(8)
@@ -38,11 +35,23 @@ while True:
         print("not login")
         sleep(2)
 
+
 def load(webdriver):
     webdriver.execute_script(injectjs)
     sleep(2)
     webdriver.execute_script("injector.run()")
 
+
+def reload_(webdriver):
+    webdriver.refresh()
+    sleep(2)
+    load(webdriver)
+
+
+load(driver)
+
+
 while True:
-    driver
-    sleep(3600)
+    sleep(180)
+    print("刷新页面")
+    reload_(driver)
