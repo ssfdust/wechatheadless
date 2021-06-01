@@ -44,7 +44,7 @@ def load(webdriver):
 
 def reload_(webdriver):
     webdriver.refresh()
-    sleep(2)
+    sleep(6)
     load(webdriver)
 
 
