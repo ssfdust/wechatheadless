@@ -52,6 +52,6 @@ load(driver)
 
 
 while True:
-    sleep(180)
+    sleep(7200)
     print("刷新页面")
     reload_(driver)
